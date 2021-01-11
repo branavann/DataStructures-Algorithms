@@ -1,0 +1,17 @@
+def quicksort(arr):
+    if len(arr) < 2:
+        return arr
+    else:
+        pivot = arr[0]
+        less = [i for i in arr[1:] if i <= pivot]
+        more = [i for i in arr[1:] if i >= pivot]
+        return quicksort(less) + [pivot] + quicksort(more)
+
+print(quicksort([10,4,6,3,8,5,7,4]))
+
+# Average case: O(n log n)
+# Worst case: O(log n)
+
+# This algorithm uses recursive functions until the base case is reached (array with a single element)
+# After the function can beginning to pop items off the stack 
+# The final result is a sorted array 
